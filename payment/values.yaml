@@ -1,0 +1,5 @@
+image:
+  repository: busybox
+  tag: latest
+  pullPolicy: IfNoPresent
+appMessage: "Payments Service"
