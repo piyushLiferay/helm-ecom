@@ -5,7 +5,11 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 helm search repo bitnami | grep nginx
 
 #Instance of a release
-helm install nginxv1 bitnami/nginx --set pdb.create=false 
+helm install nginxv1 bitnami/nginx \
+--set pdb.create=false
+
+kubectl get secrets -n aurmlyurzmebyygcle | grep nginxv1
+
 
 helm repo add eks https://aws.github.io/eks-charts
 helm repo update eks
@@ -69,9 +73,8 @@ helm repo index .
 
 # Using the helm-ecom Repo
 ```
-helm repo add myrepo https://username.github.io/helm-repo
+helm repo add myrepo https://piyushghosh017.github.io/helm-repo
 helm repo update
-
 helm search repo myrepo
 
 helm install payments-service myrepo/payments
@@ -80,6 +83,25 @@ helm install payments-service myrepo/payments
 
 
 # helm status
+```
 kubectl get secrets -n aurmlyurzmebyygcle | grep helm
 helm status nginxv1 -n aurmlyurzmebyygcle
+```
+
+# UPGRADE
+```
+helm upgrade nginxv1 bitnami/nginx \
+--set replicaCount=2 \
+--set pdb.create=false
+```
+
+# clean up resource
+```
+ kubectl delete deployment nginxv1
+kubectl delete svc nginxv1
+kubectl delete secret nginxv1-tls
+```
+
+
+
 
