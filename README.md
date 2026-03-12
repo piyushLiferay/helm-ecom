@@ -75,9 +75,9 @@ helm repo index .
 ```
 helm repo add helmecomRepo https://piyushghosh017.github.io/helm-ecom
 helm repo update
-helm search repo myrepo
+helm search repo helmecomRepo
 
-helm install payments-service myrepo/payments
+helm install payments-service myrepo/payment
 ```
 
 
