@@ -73,7 +73,7 @@ helm repo index .
 
 # Using the helm-ecom Repo
 ```
-helm repo add myrepo https://piyushghosh017.github.io/helm-repo
+helm repo add helmecomRepo https://piyushghosh017.github.io/helm-ecom
 helm repo update
 helm search repo myrepo
 
